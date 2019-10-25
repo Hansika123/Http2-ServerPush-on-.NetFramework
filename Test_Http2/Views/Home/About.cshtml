@@ -1,7 +1,27 @@
-﻿@{
-    ViewBag.Title = "About";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿    @using Test_Http2.Controllers
 
-<p>Use this area to provide additional information.</p>
+    @{
+        ViewBag.Title = "About";
+    }
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+
+    @Html.PushPromiseStylesheet("~/Content/Site.css")
+    @Html.PushPromiseStylesheet("~/content/bootstrap.css")
+    <hr/>
+
+    <h1>? server Push</h1>
+
+    <button type="button">Check Network Tab!</button> <hr />
+   
+    <p>Use this area to provide additional information.</p>
+    <p>Initiator Other usually means the network request was made from a user, not from Chrome, a redirect or a script</p>
+ 
+    
+    @Html.PushPromiseImage("~/images/1.jpg")
+    @Html.PushPromiseImage("~/images/7.jpg")
+    @Html.PushPromiseImage("~/images/2.jpg")
+    @Html.PushPromiseImage("~/images/3.jpg")
+    @Html.PushPromiseImage("~/images/4.jpg")
+    @Html.PushPromiseImage("~/images/5.jpg")
+    @Html.PushPromiseImage("~/images/6.jpg")

@@ -1,17 +1,31 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿    @using Test_Http2.Controllers
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+    @{
+        ViewBag.Title = "Contact";
+    }
+    <h2>@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+    @Html.PushPromiseStylesheet("~/Content/Site.css")
+    @Html.PushPromiseStylesheet("~/content/bootstrap.css")
+
+
+    <address>
+        One Http2 Way<br />
+        Redmond, WA 98052-6399<br />
+        <abbr title="Phone">P:</abbr>
+        127.555.0100
+    </address>
+    <hr/>
+    <p>
+        HTTP/2 is a major revision of the HTTP network protocol used by the World Wide Web.
+        It was derived from the earlier experimental SPDY protocol, originally developed by Google. <br>
+        HTTP/2 was developed by the Hypertext Transfer Protocol working group httpbis of the Internet Engineering Task Force
+    </p>
+
+    @Html.PushPromiseImage("~/images/9.jpg")
+
+    <address>
+        <strong>Support:</strong>   <a href="#">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="#">Marketing@example.com</a>
+    </address>

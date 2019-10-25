@@ -28,7 +28,6 @@ namespace Test_Http2.Controllers
             return View();
         }
 
-  
     }
 
     public static class PushPromiseExtensions
@@ -42,8 +41,21 @@ namespace Test_Http2.Controllers
             TagBuilder linkTagBuilder = new TagBuilder("link");
             linkTagBuilder.Attributes.Add("rel", "stylesheet");
             linkTagBuilder.Attributes.Add("href", urlHelper.Content(contentPath));
-
-            return new HtmlString(linkTagBuilder.ToString());
+				
+			return new HtmlString(linkTagBuilder.ToString());
         }
-    }
+
+		public static IHtmlString PushPromiseImage(this HtmlHelper htmlHelper, string contentPath)
+		{
+			UrlHelper urlHelper = new UrlHelper(htmlHelper.ViewContext.RequestContext);
+
+			htmlHelper.ViewContext.RequestContext.HttpContext.Response.PushPromise(contentPath);
+
+			TagBuilder ImageTagBuilder = new TagBuilder("img");
+			ImageTagBuilder.Attributes.Add("scr", "image");
+			ImageTagBuilder.Attributes.Add("src", urlHelper.Content(contentPath));
+
+			return new HtmlString(ImageTagBuilder.ToString());
+		}
+	}
 }
